@@ -46,7 +46,8 @@ provider:
 #    variable1: value1
 
 # you can add packaging information here
-#package:
+package:
+  individually: true
 #  include:
 #    - include-me.js
 #    - include-me-dir/**
@@ -55,17 +56,18 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  fulfillment:
-    handler: handler.getDataFromAPI
+  getFulfilmentData:
+    handler: handler.get
     events:
       - http:
           path: /
           method: get
-    # handler: handler.postDataToVouchers
-    # events:
-    #   - http:
-    #       path: posts/voucher
-    #       method: post
+  postFulfilmentData:
+    handler: handler.post
+    events:
+      - http:
+          path: /
+          method: post
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
