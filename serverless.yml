@@ -5,6 +5,9 @@ provider:
 package:
   individually: true
 
+environment:
+  VAR_1: "SLS_DEBUG=*"
+
 functions:
   getFulfilmentData:
     handler: handler.get
